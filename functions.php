@@ -12,6 +12,7 @@ include_once "inc/new_product_metabox.php";
 include_once "inc/tablepress-render.php";
 include_once "inc/product-group-icons.php";
 include_once "inc/fix-product-content-compatibility.php";
+include_once "inc/custom-landing/helpers.php";
 
 add_action( 'wp_enqueue_scripts', 'stm_enqueue_parent_styles',1000 );
 function stm_enqueue_parent_styles() {
