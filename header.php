@@ -42,7 +42,7 @@
 	?>
 	<?php
 	if ( ! stm_is_auto_parts() ) {
-			
+
 		if ( $header_layout == 'boats' || $header_layout == 'car_dealer_two' ) {
 			?>
 			<div id="stm-boats-header">
@@ -76,7 +76,12 @@
 		?>
 		<?php
 	} else {
-		do_action( 'stm_hb', array( 'header' => 'stm_hb_settings' ) );
+		if ( ! is_404() and is_page_template( 'custom-landing.php' ) ) {
+				get_template_part( 'partials/header/header', 'custom' );
+		} else {
+			do_action( 'stm_hb', array( 'header' => 'stm_hb_settings' ) );
+		}
+
 	} ?>
 
 	<div id="main" <?php if ( stm_is_magazine() ) {
