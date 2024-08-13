@@ -92,12 +92,12 @@ function register_child_custom_elements() {
 function register_woocommerce_categories_widget() {
 	vc_map( array(
 		'html_template' => get_stylesheet_directory() . '/vc_templates/stm_wcmap_category_products_list.php',
-		'name'        => __( 'WooCommerce Part Categories', 'stm-woocommerce-motors-auto-parts' ),
-		'base'        => 'stm_woocommerce_categories',
-		'icon'        => 'icon-wpb-woocommerce',
-		'category'    => __( 'STM Auto Parts', 'stm-woocommerce-motors-auto-parts' ),
-		'description' => __( 'Display a list of WooCommerce product categories.', 'stm-woocommerce-motors-auto-parts' ),
-		'params'      => array(
+		'name'          => __( 'WooCommerce Part Categories', 'stm-woocommerce-motors-auto-parts' ),
+		'base'          => 'stm_woocommerce_categories',
+		'icon'          => 'icon-wpb-woocommerce',
+		'category'      => __( 'STM Auto Parts', 'stm-woocommerce-motors-auto-parts' ),
+		'description'   => __( 'Display a list of WooCommerce product categories.', 'stm-woocommerce-motors-auto-parts' ),
+		'params'        => array(
 			array(
 				'type'        => 'textfield',
 				'heading'     => __( 'Number of Categories', 'stm-woocommerce-motors-auto-parts' ),
@@ -162,9 +162,44 @@ function register_woocommerce_categories_widget() {
 				'value'       => array( __( 'Yes', 'stm-woocommerce-motors-auto-parts' ) => 'yes' ),
 				'description' => __( 'Display the product count within each category.', 'stm-woocommerce-motors-auto-parts' ),
 			),
+			array(
+				'type'        => 'autocomplete',
+				'heading'     => __( 'Select Categories', 'stm-woocommerce-motors-auto-parts' ),
+				'param_name'  => 'category_ids',
+				'settings'    => array(
+					'multiple'      => true,
+					'sortable'      => true,
+					'unique_values' => true,
+					'min_length'    => 1,
+					'query_value'   => 'category_id', // Internal ID to search categories
+					'display_value' => 'name',        // Display the category name
+				),
+				'description' => __( 'Search and select categories to display.', 'stm-woocommerce-motors-auto-parts' ),
+			),
 		),
 	) );
 }
 
 add_action( 'vc_before_init', 'register_woocommerce_categories_widget' );
+function vc_autocomplete_stm_woocommerce_categories_category_ids_callback( $query ) {
+	global $wpdb;
+	$search  = esc_sql( $query );
+	$results = $wpdb->get_results( "SELECT t.term_id as id, t.name as name
+                                     FROM {$wpdb->terms} t
+                                     INNER JOIN {$wpdb->term_taxonomy} tt ON t.term_id = tt.term_id
+                                     WHERE tt.taxonomy = 'product_cat' AND t.name LIKE '%{$search}%' LIMIT 20" );
+	$data    = array();
+	if ( ! empty( $results ) ) {
+		foreach ( $results as $result ) {
+			$data[] = array(
+				'value' => $result->id,
+				'label' => $result->name,
+			);
+		}
+	}
+
+	return $data;
+}
+
+add_filter( 'vc_autocomplete_stm_woocommerce_categories_category_ids_callback', 'vc_autocomplete_stm_woocommerce_categories_category_ids_callback' );
 
