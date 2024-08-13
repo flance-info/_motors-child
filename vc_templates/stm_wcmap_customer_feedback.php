@@ -15,7 +15,7 @@ extract( $atts );
 		</div>
 		<div class="item-box">
 			<div class="row">
-				<div class="col-xs-12 col-sm-6 col-md-4">
+				<div class="col-xs-12 col-sm-6 col-md-4 mb-2">
 					<div class="text-8f">
 						<div class="stars">
 							<div class="vector-90">
@@ -35,7 +35,7 @@ extract( $atts );
 						<span class="item-box-95">Andrew Jackson</span>
 					</div>
 				</div>
-				<div class="col-xs-12 col-sm-6 col-md-4">
+				<div class="col-xs-12 col-sm-6 col-md-4 mb-2">
 					<div class="text-8f">
 						<div class="stars-97">
 							<div class="vector-98">
@@ -55,7 +55,7 @@ extract( $atts );
 						<span class="item-box-95">John Mike</span>
 					</div>
 				</div>
-				<div class="col-xs-12 col-sm-6 col-md-4">
+				<div class="col-xs-12 col-sm-6 col-md-4 mb-2">
 					<div class="text-8f">
 						<div class="text-a1">
 							<div class="stars-a2">
