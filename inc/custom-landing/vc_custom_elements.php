@@ -99,6 +99,18 @@ function register_child_custom_elements() {
 		)
 	) );
 
+	vc_map( array(
+		'html_template' => get_stylesheet_directory() . '/vc_templates/stm_wcmap_customer_faq.php',
+		'name'          => __( 'STM WC FAQ Widget', 'stm-woocommerce-motors-auto-parts' ),
+		'base'          => 'stm_wcmap_customer_faq',
+		'icon'          => 'icon-wpb-woocommerce',
+		'category'      => __( 'STM Auto Parts', 'stm-woocommerce-motors-auto-parts' ),
+		'description'   => __( 'STM WC FAQs', 'stm-woocommerce-motors-auto-parts' ),
+		'params'        => array(
+
+		)
+	) );
+
 }
 
 function register_woocommerce_categories_widget() {

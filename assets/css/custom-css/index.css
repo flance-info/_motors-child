@@ -408,7 +408,7 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 80px 210px;
+  padding: 80px 0px;
   background: #ffffff;
   z-index: 256;
   overflow: hidden;
@@ -475,7 +475,7 @@
   z-index: 324;
 }
 .main-container .container-aa {
-  height: 277px;
+  min-height: 277px;
   z-index: 257;
 }
 .main-container .card-de {
@@ -1837,11 +1837,9 @@
   align-items: flex-start;
   flex-wrap: nowrap;
   gap: 8px;
-  position: absolute;
-  width: 676px;
+  max-width: 676px;
   height: 272px;
-  top: 0;
-  right: 0;
+  width: 100%;
   z-index: 258;
   overflow: hidden;
 }
@@ -2114,11 +2112,9 @@
   align-items: flex-start;
   flex-wrap: nowrap;
   gap: 16px;
-  position: absolute;
-  width: 470px;
+  max-width: 470px;
+  width: 100%;
   height: 191px;
-  top: 0;
-  left: 0;
   z-index: 284;
 }
 .main-container .heading-c3 {
@@ -2144,9 +2140,9 @@
   align-self: stretch;
   flex-shrink: 0;
   position: relative;
-  width: 470px;
+  max-width: 470px;
   min-width: 0;
-  height: 72px;
+  min-height: 72px;
   color: #525e6f;
   font-family: Helvetica Neue, var(--default-font-family);
   font-size: 16px;
@@ -3022,6 +3018,9 @@
   .main-container .container-79 {
     width: 100%;
     padding: 20px;
+  }
+  .main-container .section-faq {
+    padding: 80px 20px;
   }
   .main-container .container-8d {
     margin-top: 20px;
