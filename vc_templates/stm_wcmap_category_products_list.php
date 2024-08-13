@@ -10,14 +10,21 @@ $atts = array(
 		'columns'    => $columns,
 		'hide_empty' => $hide_empty,
 		'show_count' => $show_count,
+	'category_ids' => $category_ids,
 );
 // Prepare the query arguments for WooCommerce categories
-$args               = array(
+$args = array(
 		'number'     => $atts['number'],
 		'orderby'    => $atts['orderby'],
 		'order'      => $atts['order'],
 		'hide_empty' => ( $atts['hide_empty'] === 'yes' ) ? 1 : 0,
 );
+// Filter by selected categories if provided
+if ( ! empty( $atts['category_ids'] ) ) {
+	$args['include'] = explode( ',', $atts['category_ids'] );
+}
+
+
 $product_categories = get_terms( 'product_cat', $args );
 if ( ! empty( $product_categories ) ) {
 	?>
