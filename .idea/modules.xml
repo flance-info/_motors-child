@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/../../plugins/stm-motors-extends/.idea/stm-motors-extends.iml" filepath="$PROJECT_DIR$/../../plugins/stm-motors-extends/.idea/stm-motors-extends.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../plugins/stm-post-type/.idea/stm-post-type.iml" filepath="$PROJECT_DIR$/../../plugins/stm-post-type/.idea/stm-post-type.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../plugins/stm-woocommerce-motors-auto-parts-o/.idea/stm-woocommerce-motors-auto-parts-o.iml" filepath="$PROJECT_DIR$/../../plugins/stm-woocommerce-motors-auto-parts-o/.idea/stm-woocommerce-motors-auto-parts-o.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../plugins/woocommerce/.idea/woocommerce.iml" filepath="$PROJECT_DIR$/../../plugins/woocommerce/.idea/woocommerce.iml" />
     </modules>
   </component>
 </project>

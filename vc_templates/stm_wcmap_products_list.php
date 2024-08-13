@@ -2,41 +2,67 @@
 
 $atts = vc_map_get_attributes( $this->getShortcode(), $atts );
 extract( $atts );
-
-$css_class = (!empty($css)) ? apply_filters(VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, vc_shortcode_custom_css_class($css, ' ')) : '';
-
-stm_wcmap_enqueue_scripts_styles('stm_wcmap_products_list', 'stm_wcmap_products_list');
-
 $atts = array(
-    'limit'        => $number_posts,
-    'columns'      => $columns,
-    'orderby'      => $orderby,
-    'order'        => $order,
-    'cat_operator' => 'IN',
+		'limit'        => $number_posts,
+		'columns'      => $columns,
+		'orderby'      => isset( $orderby ) ? $orderby : 'date',  // Default to 'date' if not set
+		'order'        => isset( $order ) ? $order : 'DESC',      // Default to 'DESC' if not set
+		'cat_operator' => 'IN',
+		'best_selling' => isset( $best_selling ) && $best_selling === 'best_selling'
 );
-
-$wc_prod = new WC_Shortcodes();
-switch($product_type) {
-    case "featured":
-        echo apply_filters('stm_fp_filter', $wc_prod::featured_products($atts));
-        break;
-    case "sale":
-        echo apply_filters('stm_sp_filter', $wc_prod::sale_products($atts));
-        break;
-    case "best_selling":
-        $atts = array(
-            'limit'        => $number_posts,
-            'columns'      => $columns,
-            'cat_operator' => 'IN',
-            'best_selling' => 'best_selling'
-        );
-		echo 'ttt';
-      echo apply_filters('stm_prod_filter', $wc_prod::products($atts));
-        break;
-    case "top_rated":
-        echo apply_filters('stm_trp_filter', $wc_prod::top_rated_products($atts));
-        break;
-    default:
-        echo apply_filters('stm_def_prod_fitler', $wc_prod::products($atts));
-
+$args = array(
+		'limit'   => $atts['limit'],
+		'orderby' => $atts['orderby'],
+		'order'   => $atts['order'],
+		'return'  => 'objects',             // Return full product objects (can be 'ids' if you only need the IDs)
+);
+if ( ! empty( $atts['category'] ) ) {
+	$args['category'] = array( $atts['category'] );
 }
+if ( $atts['best_selling'] ) {
+	$args['meta_key'] = 'total_sales';
+	$args['orderby']  = 'meta_value_num';
+}
+$query    = new WC_Product_Query( $args );
+$products = $query->get_products();
+?>
+
+<div class="frame-12">
+	<div class="section-header-13">
+		<span class="new-products">New products</span>
+	</div>
+	<div class="container-14">
+		<?php foreach ( $products as $product ): ?>
+			<div class="item-course-main-dark">
+				<div class="frame-15">
+					<div class="image-16">
+						<?php echo $product->get_image(); // Display product image ?>
+					</div>
+				</div>
+				<div class="frame-17">
+					<div class="frame-18">
+                        <span class="swrgm-radio-replacement">
+                            <?php echo $product->get_name(); // Display product name ?>
+                        </span>
+					</div>
+					<div class="frame-19">
+						<div class="frame-1a">
+                            <span class="price">
+                                <?php echo wc_price( $product->get_price() ); // Display product price ?>
+                            </span>
+						</div>
+						<div class="button-1b">
+							<a href="<?php echo esc_url( $product->get_permalink() ); ?>" class="text-sm-1c">
+								Shop now
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		<?php endforeach; ?>
+	</div>
+
+	<div class="button-6a">
+		<a href="<?php echo get_permalink( wc_get_page_id( 'shop' ) ); ?>" class="text-sm-6b">View more products</a>
+	</div>
+</div>

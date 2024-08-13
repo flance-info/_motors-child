@@ -10,5 +10,6 @@
     <orderEntry type="module" module-name="stm-motors-extends" />
     <orderEntry type="module" module-name="stm-post-type" />
     <orderEntry type="module" module-name="stm-woocommerce-motors-auto-parts-o" />
+    <orderEntry type="module" module-name="woocommerce" />
   </component>
 </module>
