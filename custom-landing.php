@@ -20,7 +20,5 @@ Template Name: Custom Landing
 		<?php endwhile; ?>
 	<?php endif; ?>
 
-
-
 	<?php get_footer(); ?>
 </div>

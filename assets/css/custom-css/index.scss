@@ -162,7 +162,7 @@
   }
 
 
-  .button {
+  .stm-button {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -178,7 +178,9 @@
 	z-index: 27;
 	overflow: hidden;
 	box-shadow: 0 -2px 2px 0 rgba(48, 48, 48, 0.1) inset;
+	    background-image: none !important;
   }
+
 
   .text-sm {
 	flex-shrink: 0;

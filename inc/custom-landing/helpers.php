@@ -23,3 +23,5 @@ function stm_check_page_template_and_enqueue_styles() {
 
 add_action( 'wp', 'stm_check_page_template_and_enqueue_styles' );
 
+include_once "vc_custom_elements.php";
+
