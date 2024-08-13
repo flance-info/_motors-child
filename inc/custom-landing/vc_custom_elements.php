@@ -5,7 +5,7 @@ if ( function_exists( 'vc_map' ) ) {
 }
 function register_child_custom_elements() {
 
-	$order_by_values = array(
+	$order_by_values  = array(
 		'',
 		__( 'Date', 'stm-woocommerce-motors-auto-parts' )               => 'date',
 		__( 'ID', 'stm-woocommerce-motors-auto-parts' )                 => 'ID',
@@ -23,7 +23,7 @@ function register_child_custom_elements() {
 		__( 'Descending', 'stm-woocommerce-motors-auto-parts' ) => 'DESC',
 		__( 'Ascending', 'stm-woocommerce-motors-auto-parts' )  => 'ASC',
 	);
-	$productsType = array(
+	$productsType     = array(
 		'',
 		esc_html__( 'New', 'stm-woocommerce-motors-auto-parts' ) => 'best_selling',
 	);
@@ -88,3 +88,83 @@ function register_child_custom_elements() {
 	) );
 
 }
+
+function register_woocommerce_categories_widget() {
+	vc_map( array(
+		'html_template' => get_stylesheet_directory() . '/vc_templates/stm_wcmap_category_products_list.php',
+		'name'        => __( 'WooCommerce Part Categories', 'stm-woocommerce-motors-auto-parts' ),
+		'base'        => 'stm_woocommerce_categories',
+		'icon'        => 'icon-wpb-woocommerce',
+		'category'    => __( 'STM Auto Parts', 'stm-woocommerce-motors-auto-parts' ),
+		'description' => __( 'Display a list of WooCommerce product categories.', 'stm-woocommerce-motors-auto-parts' ),
+		'params'      => array(
+			array(
+				'type'        => 'textfield',
+				'heading'     => __( 'Number of Categories', 'stm-woocommerce-motors-auto-parts' ),
+				'param_name'  => 'number',
+				'value'       => 5,
+				'description' => __( 'Enter the number of categories to display. Set to -1 to display all categories.', 'stm-woocommerce-motors-auto-parts' ),
+				'save_always' => true,
+			),
+			array(
+				'type'        => 'dropdown',
+				'heading'     => __( 'Order by', 'stm-woocommerce-motors-auto-parts' ),
+				'param_name'  => 'orderby',
+				'value'       => array(
+					__( 'Name', 'stm-woocommerce-motors-auto-parts' )  => 'name',
+					__( 'ID', 'stm-woocommerce-motors-auto-parts' )    => 'ID',
+					__( 'Slug', 'stm-woocommerce-motors-auto-parts' )  => 'slug',
+					__( 'Count', 'stm-woocommerce-motors-auto-parts' ) => 'count',
+				),
+				'std'         => 'name',
+				'description' => __( 'Select how to sort categories.', 'stm-woocommerce-motors-auto-parts' ),
+				'save_always' => true,
+			),
+			array(
+				'type'        => 'dropdown',
+				'heading'     => __( 'Sort order', 'stm-woocommerce-motors-auto-parts' ),
+				'param_name'  => 'order',
+				'value'       => array(
+					__( 'Ascending', 'stm-woocommerce-motors-auto-parts' )  => 'ASC',
+					__( 'Descending', 'stm-woocommerce-motors-auto-parts' ) => 'DESC',
+				),
+				'std'         => 'ASC',
+				'description' => __( 'Designates the ascending or descending order.', 'stm-woocommerce-motors-auto-parts' ),
+				'save_always' => true,
+			),
+			array(
+				'type'        => 'dropdown',
+				'heading'     => __( 'Columns', 'stm-woocommerce-motors-auto-parts' ),
+				'param_name'  => 'columns',
+				'value'       => array(
+					2 => 2,
+					3 => 3,
+					4 => 4,
+					5 => 5,
+					6 => 6,
+				),
+				'std'         => 4,
+				'description' => __( 'Select the number of columns to display categories in.', 'stm-woocommerce-motors-auto-parts' ),
+				'save_always' => true,
+			),
+			array(
+				'type'        => 'checkbox',
+				'heading'     => __( 'Hide Empty', 'stm-woocommerce-motors-auto-parts' ),
+				'param_name'  => 'hide_empty',
+				'value'       => array( __( 'Yes', 'stm-woocommerce-motors-auto-parts' ) => 'yes' ),
+				'std'         => 'yes',
+				'description' => __( 'Hide categories that do not have any products.', 'stm-woocommerce-motors-auto-parts' ),
+			),
+			array(
+				'type'        => 'checkbox',
+				'heading'     => __( 'Show Count', 'stm-woocommerce-motors-auto-parts' ),
+				'param_name'  => 'show_count',
+				'value'       => array( __( 'Yes', 'stm-woocommerce-motors-auto-parts' ) => 'yes' ),
+				'description' => __( 'Display the product count within each category.', 'stm-woocommerce-motors-auto-parts' ),
+			),
+		),
+	) );
+}
+
+add_action( 'vc_before_init', 'register_woocommerce_categories_widget' );
+

@@ -517,19 +517,17 @@
 .main-container .frame-a {
   flex-shrink: 0;
   position: relative;
-  width: 374px;
+  width: 100%;
   height: 470px;
   background: #000000;
   z-index: 292;
   overflow: hidden;
+  margin-bottom: 25px;
 }
 .main-container .image-b {
   position: absolute;
-  width: 492px;
+  width: 100%;
   height: 492px;
-  top: -22px;
-  left: -21px;
-  background: url(./images/19d610f9723c68745c5076f41e1a14b6806e020b.png) no-repeat center;
   background-size: cover;
   z-index: 293;
 }
