@@ -24,7 +24,7 @@
   height: 100vh;
   margin: 0px;
   overflow: hidden;
-  background: url(./assets/images/car-backgound.png) no-repeat center;
+  background: url(./images/car-backgound.png) no-repeat center;
   background-size: cover;
   z-index: 18;
 }
