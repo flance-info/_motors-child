@@ -23,6 +23,7 @@ if ( $atts['best_selling'] ) {
 	$args['meta_key'] = 'total_sales';
 	$args['orderby']  = 'meta_value_num';
 }
+
 $query    = new WC_Product_Query( $args );
 $products = $query->get_products();
 ?>
@@ -31,8 +32,9 @@ $products = $query->get_products();
 	<div class="section-header-13">
 		<span class="new-products">New products</span>
 	</div>
-	<div class="container-14">
+	<div class="container-14 row">
 		<?php foreach ( $products as $product ): ?>
+		<div class="col-xss-12 col-xs-6 col-sm-6 col-md-4 col-lg-3">
 			<div class="item-course-main-dark">
 				<div class="frame-15">
 					<div class="image-16">
@@ -48,7 +50,7 @@ $products = $query->get_products();
 					<div class="frame-19">
 						<div class="frame-1a">
                             <span class="price">
-                                <?php echo wc_price( $product->get_price() ); // Display product price ?>
+                                <?php echo ($product->get_price()) ? wc_price( $product->get_price() ) : ''; // Display product price ?>
                             </span>
 						</div>
 						<div class="button-1b">
@@ -59,6 +61,7 @@ $products = $query->get_products();
 					</div>
 				</div>
 			</div>
+		</div>
 		<?php endforeach; ?>
 	</div>
 
