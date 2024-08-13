@@ -3,7 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/_motors-child.iml" filepath="$PROJECT_DIR$/.idea/_motors-child.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../plugins/_stm-motors-extends/.idea/_stm-motors-extends.iml" filepath="$PROJECT_DIR$/../../plugins/_stm-motors-extends/.idea/_stm-motors-extends.iml" />
       <module fileurl="file://$PROJECT_DIR$/../motors/.idea/motors.iml" filepath="$PROJECT_DIR$/../motors/.idea/motors.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../plugins/stm-motors-classified-five/.idea/stm-motors-classified-five.iml" filepath="$PROJECT_DIR$/../../plugins/stm-motors-classified-five/.idea/stm-motors-classified-five.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../plugins/stm-motors-extends/.idea/stm-motors-extends.iml" filepath="$PROJECT_DIR$/../../plugins/stm-motors-extends/.idea/stm-motors-extends.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../plugins/stm-post-type/.idea/stm-post-type.iml" filepath="$PROJECT_DIR$/../../plugins/stm-post-type/.idea/stm-post-type.iml" />
     </modules>
   </component>
 </project>
