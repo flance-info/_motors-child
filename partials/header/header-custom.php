@@ -1,8 +1,6 @@
 <?php
-
-
 ?>
-<div class="main-container">
+
 	<div class="section-intro">
 		<div class="stm-header">
 			<div class="stm-container">
@@ -254,7 +252,7 @@
 				<div class="video">
 
 					<div class="embed-responsive embed-responsive-16by9">
-
+						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
 					</div>
 
 				</div>
@@ -623,8 +621,6 @@
 		</div>
 		<span class="follow-us">Follow us</span>
 	</div>
-
-
 	<div class="footer">
 		<div class="content-d2">
 			<div class="logo-d3">
@@ -647,4 +643,4 @@
 			</div>
 		</div>
 	</div>
-</div>
+
