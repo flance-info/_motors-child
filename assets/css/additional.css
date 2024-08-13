@@ -1,0 +1,52 @@
+.stm-template-auto_parts .stm-header__hb {
+    max-width: 100%;
+}
+
+.stm-template-auto_parts .stm-header__hb .container {
+    padding: 0;
+    max-width: 1340px;
+}
+
+.stm-template-auto_parts .stm-header__row_color.stm-header__row_color_top {
+    background: #000;
+}
+.stm-template-auto_parts .stm-header__row_color.stm-header__row_color_center {
+    background: #000;
+}
+.stm-template-auto_parts .stm-header__row_color.stm-header__row_color_bottom {
+    background: #191919;
+}
+
+.stm-template-auto_parts .container {
+    max-width: 1370px;
+}
+
+.stm-header__row .stm-socials {
+    margin: 0;
+}
+.stm-header__hb .stm-navigation ul:after {
+    content: none;
+}
+
+.stm-template-auto_parts #footer .widgets aside .widget_socials {
+    justify-content: initial;
+}
+.stm-template-auto_parts #footer .widgets aside .widget_socials li:not(:last-of-type) {
+    margin-right: 15px;
+}
+
+.home .stm_mc-image-category .inner {
+    padding-bottom: 43.2%;
+}
+.home .stm_mc-image-category .inner img {
+    position: absolute;
+    left: 0;
+    height: auto;
+}
+
+@media(max-width:1400px) {
+    .stm-template-auto_parts .stm-header__row_color_bottom .container .stm-navigation .search_fibo.menu-item {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+}

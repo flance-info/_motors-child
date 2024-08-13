@@ -1,0 +1,572 @@
+@import './parts/responsive';
+@import './parts/sidebar';
+@import './parts/inventory';
+[v-cloak] {
+	display: none;
+}
+
+.stm-accordion-single-unit {
+	margin-top: 0!important;
+	box-shadow: 0 3px 20px -5px rgba(0,0, 0, 0.5) !important;
+	border-top: 4px solid #ffcc12;
+	margin-bottom: 20px;
+	ul{
+		list-style: none;
+		padding: 0 20px 20px;
+		margin: 0;
+	}
+}
+
+.stm-accordion-single-unit>a.title {
+	border-top: 1px solid #ddd!important;
+}
+.stm-accordion-single-unit > a.title {
+	position: relative;
+	display: block;
+	padding: 27px 20px 20px 25px;
+	background-color: #fff;
+	border-top: 4px solid #232628;
+	text-decoration: none !important;
+}
+.stm-accordion-single-unit > a.title.collapsed {
+	padding: 15px 20px 15px 25px;
+	border-top-color: #ffcc12;
+}
+.stm-accordion-single-unit .minus, .stm-accordion-single-unit>a.title:hover .minus, .stm-accordion-single-unit>a.title:hover .minus:after {
+	color: #ccc!important;
+}
+.stm-accordion-single-unit > a.title .minus {
+	display: block;
+	position: absolute;
+	top: 50%;
+	right: 20px;
+	margin-top: 1px;
+	width: 11px;
+	height: 3px;
+	background-color: #ccc;
+}
+.stm-accordion-single-unit > a.title.collapsed .minus {
+	margin-top: -2px;
+}
+.stm-accordion-single-unit > a.title .minus:after {
+	position: absolute;
+	content: '';
+	display: block;
+	top: -4px;
+	left: 4px;
+	height: 11px;
+	width: 3px;
+	background-color: #ccc;
+	opacity: 0;
+}
+.stm-accordion-single-unit > a.title.collapsed .minus:after {
+	opacity: 1;
+}
+.stm-accordion-content {
+	background-color: #fff;
+}
+.collapse {
+	display: none;
+}
+.stm-accordion-single-unit > a.title h5 {
+	margin-bottom: 0;
+	text-transform: uppercase;
+}
+.stm-accordion-single-unit .filter-title__selected {
+	display: inline-block;
+}
+.stm-accordion-single-unit .filter-title__selected {
+	font-size: 12px;
+	font-weight: 400;
+	text-transform: capitalize;
+}
+.stm-template-auto_parts h4, .stm-template-auto_parts .h4{
+	font-size: 25px !important;
+}
+
+
+.stm-car-listing-sort-units {
+	margin-top: 4px;
+	padding-bottom: 22px;
+	margin-bottom: 22px;
+	border-bottom: 1px solid #ddd;
+}
+.stm-car-listing-sort-units {
+	margin-bottom: 30px !important;
+}
+.stm-modern-filter-found-cars {
+	float: left;
+}
+.stm-modern-filter-found-cars h4 {
+	text-transform: uppercase;
+}
+.orange {
+	color: #ffcc12;
+}
+.stm-sort-by-options {
+	display: -webkit-box;
+	display: flex;
+	-webkit-box-align: center;
+	align-items: center;
+}
+@media only screen and (min-width: 960px){
+	.stm-car-listing-sort-units.stm-modern-filter-actions .stm-sort-by-options {
+		margin-top: 3px !important;
+		margin-right: 0px !important;
+	}
+}
+.stm-car-listing-sort-units.stm-modern-filter-actions .stm-sort-by-options {
+	margin-top: -8px;
+	float: right;
+	margin-right: 25px;
+}
+.stm-car-listing-sort-units .stm-sort-by-options > span {
+	float: left;
+	margin-top: 7px;
+	margin-right: 9px;
+	text-transform: uppercase;
+	font-size: 12px;
+	color: #888;
+}
+.stm-car-listing-sort-units .stm-sort-by-options .stm-select-sorting {
+	min-width: 180px;
+	float: left;
+}
+.checker {
+	position: relative;
+	top: -1px;
+	margin-right: 10px !important;
+}
+div.selector, div.checker, div.button, div.radio, div.uploader {
+	display: -moz-inline-box;
+	display: inline-block;
+	zoom: 1;
+	vertical-align: middle;
+	position: relative;
+	width: 16px;
+	height: 16px;
+}
+div.selector, div.selector span, div.checker span, div.radio span, div.uploader, div.uploader span.action, div.button, div.button span {
+	background-image: url("/wp-content/themes/motors/assets/images/checks2x.png");
+	background-repeat: no-repeat;
+	-webkit-font-smoothing: antialiased;
+}
+div.checker span {
+	-webkit-box-shadow: 0px 0px 0px 1px #555 !important;
+	-moz-box-shadow: 0px 0px 0px 1px #555 !important;
+	box-shadow: 0px 0px 0px 1px #555 !important;
+	border-radius: 2px;
+}
+div.checker input {
+	opacity: 0;
+	filter: alpha(opacity=0);
+	-moz-opacity: 0;
+	border: none;
+	background: none;
+	display: -moz-inline-box;
+	display: inline-block;
+	zoom: 1;
+}
+div.checker, div.checker span, div.checker input {
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+}
+div.checker span.checked {
+	background-position: -16px 0;
+}
+div.checker span.checked {
+	box-shadow: none !important;
+}
+div.checker span {
+	background-size: 32px;
+}
+div.selector, div.checker, div.button, div.radio, div.uploader {
+	display: -moz-inline-box;
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	vertical-align: middle;
+}
+ul.stm-filter-chosen-units-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.ais-CurrentRefinements-item {
+	padding-right: 5px !important;
+}
+ul.stm-filter-chosen-units-list li {
+	position: relative;
+	float: left;
+	padding: 4px 35px 6px 13px;
+	margin: 0 15px 10px 0;
+	font-size: 13px;
+	box-shadow: 0 1px 3px rgb(59 62 68 / 30%);
+	border-radius: 3px;
+	color: #555;
+}
+.ais-ClearRefinements .ais-CurrentRefinements-item {
+	background-color: #5c707c;
+}
+ul.stm-filter-chosen-units-list li:last-child {
+	margin-right: 0;
+}
+ul.page-numbers {
+	display: block;
+	position: relative;
+	padding: 45px 60px 0;
+	border-top: 1px solid #ddd;
+	text-align: center;
+	padding-top: 0;
+	margin-top: 0;
+	border-top: none;
+}
+.stm-blog-pagination .page-numbers {
+	padding-top: 0;
+	margin-top: 0;
+	border-top: none;
+	display: block !important;
+	width: 100%;
+	margin-bottom: 10px;
+}
+.prev_next {
+	padding: 20px;
+}
+ul.page-numbers li {
+	display: inline-block;
+	margin-bottom: 0;
+}
+ul.page-numbers li > a {
+	display: block;
+	width: 34px;
+	height: 35px;
+	margin: 0 8px;
+	padding: 0;
+	background-color: #ffcc12;
+	color: #fff !important;
+	border-top: none;
+	border-radius: 3px;
+	line-height: 35px;
+	text-decoration: none !important;
+}
+.ais-HitsPerPage {
+	padding-top: 10px;
+	max-width: 175px;
+	margin: 0 auto;
+	select{
+		width: 100%;
+	}
+}
+.abd-full-modern-filters .stm-accordion-single-unit input[type="search"]{
+	height: 40px;
+}
+.stm-template-auto_parts ol{
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin: 0;
+	padding: 0 15px !important;
+	list-style: none;
+	clear: both;
+	overflow: visible;
+}
+.stm-template-auto_parts ol li {
+	display: block;
+	position: relative;
+	margin-bottom: 0 !important;
+	list-style: none;
+	border-right: 1px dashed #cccccc;
+	border-bottom: 1px dashed #cccccc;
+	padding: 0;
+}
+.stm-template-auto_parts ol li:before{
+	content: '';
+	display: block;
+	position: absolute;
+	top: -1px;
+	left: -1px;
+	right: -1px;
+	bottom: -1px;
+	background: #ffffff;
+	box-shadow: 0 5px 30px -5px rgb(0 0 0 / 60%);
+	z-index: 0;
+	opacity: 0;
+	transition: all .2s ease;
+}
+.stm-template-auto_parts ol li:hover:before {
+	opacity: 1;
+}
+.stm-template-auto_parts ol li .stm-product-inner {
+	margin-bottom: 30px;
+	position: relative;
+}
+.stm-template-auto_parts ol li .car-title {
+	padding: 0 30px;
+	font-size: 18px;
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: 20px;
+	margin: 0 0 10px;
+}
+.stm-template-auto_parts ol li .image-inner{
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-ms-flex-align: center;
+	align-items: center;
+	overflow: hidden;
+	position: relative;
+	padding: 0 30px;
+	height: 279px;
+}
+.stm-template-auto_parts ol li .image-inner img {
+	display: block;
+	width: auto;
+	max-width: 100%;
+	position: relative;
+	height: auto;
+	max-height: 210px;
+	margin: 0 auto;
+}
+.stm-template-auto_parts ol li .car-meta-bottom{
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-ms-flex-align: center;
+	align-items: center;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	padding: 0 30px;
+}
+
+
+
+
+
+
+
+
+.ais-HierarchicalMenu ul,
+.ais-RefinementList ul{
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-ms-flex-align: start;
+	align-items: flex-start;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	margin: 0;
+	padding: 0 0 17px;
+	list-style: none;
+	padding-right: 5px;
+}
+.ais-HierarchicalMenu ul li,
+.ais-RefinementList ul li{
+	display: -ms-flexbox;
+	display: flex;
+	width: 48%;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-ms-flex-align: start;
+	align-items: flex-start;
+	margin-bottom: 22px;
+}
+.ais-HierarchicalMenu ul li:last-child > ul,
+.ais-RefinementList ul li:last-child > ul{
+	padding-bottom: 0 !important;
+}
+
+.ais-HierarchicalMenu ul li,
+.ais-RefinementList ul li{
+	width: 100% !important;
+	margin-bottom: 0 !important;
+	display: block !important;
+	position: relative;
+}
+.ais-HierarchicalMenu ul li + li ,
+.ais-RefinementList ul li + li {
+	margin-top: -5px;
+}
+.ais-HierarchicalMenu ul li:before,
+.ais-HierarchicalMenu ul li:after{
+	content: "";
+	width: 16px;
+	height: 16px;
+	display: block;
+	position: absolute;
+	top: 5px;
+	left: 0;
+}
+.ais-RefinementList ul li:not(.ais-RefinementList-list__no-options):before,
+.ais-RefinementList ul li:not(.ais-RefinementList-list__no-options):after{
+	content: "";
+	width: 16px;
+	height: 16px;
+	display: block;
+	position: absolute;
+	top: 8px;
+	left: 0;
+}
+.ais-HierarchicalMenu ul li:before,
+.ais-RefinementList ul li:before{
+	border: 1px solid #6c98e1;
+	box-shadow: 1px 1px 3px rgba(108,152,227,0.4) inset;
+}
+.ais-HierarchicalMenu ul li.ais-HierarchicalMenu-item--selected > ul,
+.ais-RefinementList ul li.is-refined > ul{
+	display: block !important;
+}
+
+.ais-HierarchicalMenu li a .ais-HierarchicalMenu-label,
+.ais-RefinementList li label{
+	font-size: 13px;
+	line-height: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.ais-HierarchicalMenu li a .ais-HierarchicalMenu-count,
+.ais-RefinementList li label span span{
+	font-size: 10px;
+	background-color: #ffdc5a;
+	color: #fff;
+	padding: 0px 5px;
+	border-radius: 10px;
+	min-width: 25px;
+	text-align: center;
+	display: inline-block;
+	line-height: 15px;
+	font-weight: bold;
+	top: -1px;
+	position: relative;
+}
+.ais-HierarchicalMenu > ul.ais-HierarchicalMenu-list--lvl0 > li:before{
+
+}
+.ais-RefinementList .content:not(.checkbox_parent) > ul.ais-RefinementList-list > li.has-children:before{
+	border-radius: 50%;
+}
+.ais-RefinementList ul.ais-RefinementList-list > li.has-children:after{
+	background-color: #6c98e1;
+	border-radius: 50%;
+	height: 6px;
+	width: 6px;
+	left: 5px;
+	top: 13px;
+	opacity: 0;
+}
+.ais-HierarchicalMenu > ul.ais-HierarchicalMenu-list--lvl0 > li:after,
+.ais-RefinementList .content:not(.checkbox_parent) > ul.ais-RefinementList-list > li.has-children:after{
+	opacity: 1;
+}
+.ais-RefinementList .content.hidden_child > ul li > ul{
+	visibility: hidden;
+	height: 0;
+	overflow: hidden;
+	opacity: 0;
+}
+.ais-RefinementList .content.hidden_child > ul li.is-pseudo-refined  ul{
+	visibility: visible;
+	height: auto;
+	overflow: auto;
+	opacity: 1;
+}
+.ais-HierarchicalMenu ul li a,
+.ais-RefinementList ul li label{
+	padding-left: 22px;
+	position: relative;
+	z-index: 10;
+	font-size: 13px;
+}
+.ais-HierarchicalMenu ul > li > ul li a:before,
+.ais-RefinementList .content > ul.ais-RefinementList-list > li > ul li label:before{
+	content: "";
+	height: 1px;
+	width: 10px;
+	position: absolute;
+	left: -10px;
+	top: 8px;
+	background-color: #6c98e1;
+}
+.ais-RefinementList .content > ul.ais-RefinementList-list > li > ul li label:before{
+	top: 16px;
+}
+.ais-HierarchicalMenu ul li a:hover,
+.ais-RefinementList ul li label:hover,
+.ais-HierarchicalMenu ul li a:focus,
+.ais-RefinementList ul li label:focus{
+	color: #6c98e1 !important;
+}
+
+.ais-HierarchicalMenu ul,
+.ais-RefinementList ul{
+
+}
+
+.ais-RefinementList .content > ul > li > ul,
+.ais-RefinementList .content > ul > li > ul > li > ul{
+	margin-left: 7px !important;
+	border-left: 1px solid #6c98e1;
+	padding-left: 10px !important;
+	margin-top: -6px !important;
+	padding-top: 0 !important;
+	padding-bottom: 5px !important;
+	margin-bottom: -3px !important;
+}
+.ais-HierarchicalMenu ul > li > ul{
+	margin-left: 7px !important;
+	border-left: 1px solid #6c98e1;
+	padding-left: 10px !important;
+	margin-top: -5px !important;
+	padding-top: 5px !important;
+	padding-bottom: 5px !important;
+	margin-bottom: 0 !important;
+}
+.ais-HierarchicalMenu ul > li > ul > li ,
+.ais-RefinementList .content > ul > li > ul > li {
+
+}
+.ais-HierarchicalMenu ul > li > ul > li:before,
+.ais-RefinementList .content > ul > li > ul > li:before{
+	border: 1px solid #6c98e1;
+	border-radius: 0;
+	box-shadow: 1px 1px 3px rgba(108,152,227,0.4) inset;
+}
+
+.ais-HierarchicalMenu ul > li.ais-HierarchicalMenu-item--selected:after,
+.ais-HierarchicalMenu ul > li > ul > li.ais-HierarchicalMenu-item--selected:after,
+.ais-RefinementList .content ul li:not(.ais-RefinementList-list__no-options).is-refined:after,
+.ais-RefinementList .content ul li:not(.ais-RefinementList-list__no-options).is-pseudo-refined:after,
+.ais-HierarchicalMenu ul:not(.ais-HierarchicalMenu-list--lvl0) > li.ais-HierarchicalMenu-item--selected:after{
+	content: "\2713";
+	background-color: transparent;
+	border-radius: 0;
+	box-shadow: none;
+	top: 4px;
+	left: 4px;
+	font-weight: bolder;
+	font-size: 11px;
+	color: #6c98e1;
+	width: 6px;
+	height: 6px;
+	opacity: 1;
+}
+.ais-HierarchicalMenu ul > li > ul > li.ais-HierarchicalMenu-item--selected:after,
+.ais-HierarchicalMenu ul:not(.ais-HierarchicalMenu-list--lvl0) > li.ais-HierarchicalMenu-item--selected:after,
+.ais-HierarchicalMenu ul > li.ais-HierarchicalMenu-item--selected:after{
+	top: 1px;
+}
+
+.ais-RefinementList ul .checker{
+	display: none;
+}
