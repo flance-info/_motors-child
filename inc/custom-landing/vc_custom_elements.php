@@ -86,7 +86,6 @@ function register_child_custom_elements() {
 			),
 		)
 	) );
-
 	vc_map( array(
 		'html_template' => get_stylesheet_directory() . '/vc_templates/stm_wcmap_customer_feedback.php',
 		'name'          => __( 'STM WC Customer Feedbacks Widget', 'stm-woocommerce-motors-auto-parts' ),
@@ -94,11 +93,8 @@ function register_child_custom_elements() {
 		'icon'          => 'icon-wpb-woocommerce',
 		'category'      => __( 'STM Auto Parts', 'stm-woocommerce-motors-auto-parts' ),
 		'description'   => __( 'STM WC Customer Feedbacks', 'stm-woocommerce-motors-auto-parts' ),
-		'params'        => array(
-
-		)
+		'params'        => array()
 	) );
-
 	vc_map( array(
 		'html_template' => get_stylesheet_directory() . '/vc_templates/stm_wcmap_customer_faq.php',
 		'name'          => __( 'STM WC FAQ Widget', 'stm-woocommerce-motors-auto-parts' ),
@@ -106,10 +102,46 @@ function register_child_custom_elements() {
 		'icon'          => 'icon-wpb-woocommerce',
 		'category'      => __( 'STM Auto Parts', 'stm-woocommerce-motors-auto-parts' ),
 		'description'   => __( 'STM WC FAQs', 'stm-woocommerce-motors-auto-parts' ),
-		'params'        => array(
-
-		)
+		'params'        => array()
 	) );
+	vc_map( array(
+		'html_template' => get_stylesheet_directory() . '/vc_templates/stm_wcmap_slider.php',
+		'name'          => __( 'STM Video Slider', 'stm-woocommerce-motors-auto-parts' ),
+		'base'          => 'stm_wcmap_slider',
+		'icon'          => 'icon-wpb-woocommerce',
+		'category'      => __( 'STM Auto Parts', 'stm-woocommerce-motors-auto-parts' ),
+		'description'   => __( 'STM Slider', 'stm-woocommerce-motors-auto-parts' ),
+		'params'        => array(
+			array(
+				'type'        => 'param_group',
+				'heading'     => __( 'Videos', 'stm-woocommerce-motors-auto-parts' ),
+				'param_name'  => 'videos',
+				'params'      => array(
+					array(
+						'type'        => 'textfield',
+						'heading'     => __( 'Video URL', 'stm-woocommerce-motors-auto-parts' ),
+						'param_name'  => 'video_url',
+						'description' => __( 'Enter the YouTube video URL', 'stm-woocommerce-motors-auto-parts' ),
+					),
+					array(
+						'type'        => 'textfield',
+						'heading'     => __( 'Video Title', 'stm-woocommerce-motors-auto-parts' ),
+						'param_name'  => 'video_title',
+						'description' => __( 'Enter the title of the video', 'stm-woocommerce-motors-auto-parts' ),
+					),
+					array(
+						'type'        => 'textarea',
+						'heading'     => __( 'Video Description', 'stm-woocommerce-motors-auto-parts' ),
+						'param_name'  => 'video_description',
+						'description' => __( 'Enter a short description for the video', 'stm-woocommerce-motors-auto-parts' ),
+					),
+				),
+				'value'       => '',
+				'description' => __( 'Add multiple videos with their titles and descriptions.', 'stm-woocommerce-motors-auto-parts' ),
+			),
+		),
+	) );
+
 
 }
 

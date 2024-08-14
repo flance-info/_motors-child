@@ -1035,6 +1035,7 @@
   border: 2px solid #fecd34;
   z-index: 38;
   overflow: hidden;
+  cursor: pointer;
 }
 .main-container .icon-71 {
   flex-shrink: 0;
@@ -1073,6 +1074,7 @@
   border: 2px solid #fecd34;
   z-index: 42;
   overflow: hidden;
+  cursor: pointer;
 }
 .main-container .icon-75 {
   flex-shrink: 0;
