@@ -57,8 +57,12 @@
 	flex-shrink: 0;
 	gap: 32px;
 	position: relative;
-	width: 473px;
+	width: auto;
 	z-index: 19;
+  }
+
+  .stm-logo {
+	margin-left: 20px;
   }
 
   .column-1 {
@@ -68,7 +72,7 @@
 	flex-shrink: 0;
 	gap: 32px;
 	position: relative;
-	width: 335px;
+	width: auto;
 	z-index: 20;
 	overflow: hidden;
   }
@@ -477,6 +481,7 @@
 	flex-wrap: nowrap;
 	margin-top: 13px;
 	z-index: 16;
+	adding-right: 20px;
   }
 
   .section-header,
@@ -3260,12 +3265,12 @@
 	overflow: hidden;
   }
 
- .link a {
+  .link a {
 	color: #fff;
   }
 
 
-.link a:hover {
+  .link a:hover {
 	color: #fecd34;
   }
 
@@ -3440,7 +3445,20 @@
   }
   // Responsive adjustments
   @media (max-width: 1024px) {
-
+	.stm-header {
+	  top: unset;
+	  bottom: unset;
+	  left: unset;
+	  background-color: unset;
+	  padding: unset;
+	  position: relative;
+	  max-width: 1440px;
+	  height: 72px;
+	  margin: 0 auto;
+	  z-index: 15;
+	  overflow: hidden;
+	  width: 100%;
+	}
 	.video-heading {
 	  line-height: 1;
 	}
