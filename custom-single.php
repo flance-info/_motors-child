@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Custom Landing
+Template Name: Custom Single
 */
 
 ?>
@@ -12,7 +12,7 @@ Template Name: Custom Landing
 			<?php if ( has_post_thumbnail() ):
 				$page_bg = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full' );
 			endif; ?>
-			<div class="">
+			<div class="stm-main">
 				<div class="">
 					<?php the_content(); ?>
 				</div>

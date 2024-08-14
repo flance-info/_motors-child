@@ -16,7 +16,7 @@ function stm_enqueue_custom_styles() {
 }
 
 function stm_check_page_template_and_enqueue_styles() {
-	if ( is_page_template( 'custom-landing.php' ) ) {
+	if ( is_page_template( 'custom-landing.php' ) || is_page_template( 'custom-single.php' )  ) {
 		add_action( 'wp_enqueue_scripts', 'stm_enqueue_custom_styles', 1000 );
 	}
 }

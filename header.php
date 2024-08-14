@@ -76,8 +76,9 @@
 		?>
 		<?php
 	} else {
-		if ( ! is_404() and is_page_template( 'custom-landing.php' ) ) {
-				get_template_part( 'partials/header/header', 'custom' );
+		if ( ! is_404() and ( is_page_template( 'custom-landing.php' ) ||  is_page_template( 'custom-single.php' ) )) {
+				if (is_page_template( 'custom-landing.php' ) ) get_template_part( 'partials/header/header', 'custom' );
+				if (is_page_template( 'custom-single.php' ) ) get_template_part( 'partials/header/header', 'customsingle' );
 		} else {
 			do_action( 'stm_hb', array( 'header' => 'stm_hb_settings' ) );
 		}

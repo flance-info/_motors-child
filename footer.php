@@ -3,7 +3,7 @@
 <?php //do_action( 'stm_pre_footer' ); ?>
 <?php if ( ! is_404() and ! is_page_template( 'coming-soon.php' ) ) {
 
-	if ( ! is_404() and is_page_template( 'custom-landing.php' ) ) {
+	if ( ! is_404() and ( is_page_template( 'custom-landing.php' ) ||  is_page_template( 'custom-single.php' )  )) {
 		get_template_part( 'partials/footer/footer', 'custom' );
 	} else { ?>
 		<footer id="footer">

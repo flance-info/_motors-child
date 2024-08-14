@@ -8,6 +8,8 @@
   box-sizing: border-box;
   /* Base container class for common styles */
   /* Specific styling */
+  /* Hide mobile menu on desktop */
+  /* Responsive Styles */
 }
 .main-container * {
   box-sizing: border-box;
@@ -3059,6 +3061,15 @@
     height: auto;
   }
 }
+.main-container .mobile-menu {
+  display: none;
+}
+.main-container .hamburger-icon {
+  display: none;
+}
+.main-container .desktop-menu .link {
+  padding-left: 20px;
+}
 @media (max-width: 1024px) {
   .main-container .stm-header {
     top: unset;
@@ -3150,6 +3161,82 @@
   }
   .main-container .xmb-10 {
     margin-top: 20px;
+  }
+}
+@media (max-width: 900px) {
+  .main-container {
+    /* Hamburger icon default styling */
+    /* Transformations to create the "X" shape */
+    /* Base styles for the mobile menu */
+    /* Active state - menu slides down and fades in */
+    /* Link styling */
+  }
+  .main-container .desktop-menu {
+    display: none;
+  }
+  .main-container .hamburger-icon {
+    width: 30px;
+    height: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  .main-container .hamburger-icon span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+  }
+  .main-container .hamburger-icon.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .main-container .hamburger-icon.active span:nth-child(2) {
+    opacity: 0;
+    /* Hide the middle line */
+  }
+  .main-container .hamburger-icon.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  .main-container .hamburger-menu {
+    display: block;
+  }
+  .main-container .mobile-menu {
+    display: none;
+    /* Hidden by default */
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: #fff;
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-height: 0;
+    /* Collapsed by default */
+    opacity: 0;
+    /* Transparent by default */
+    overflow: hidden;
+    /* Hide overflowing content when collapsed */
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    /* Transition for sliding and fading */
+    z-index: 22222;
+  }
+  .main-container .mobile-menu.active {
+    display: flex;
+    max-height: 300px;
+    /* Adjust based on content height */
+    opacity: 1;
+    /* Fully visible */
+  }
+  .main-container .mobile-menu .link {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  .main-container .mobile-menu .link a {
+    text-decoration: none;
+    color: #333;
   }
 }
 @media (max-width: 768px) {
