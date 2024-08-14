@@ -7,7 +7,7 @@ if ( is_active_sidebar( 'footer' ) ) { ?>
 	endif;
 	$sidebars_widgets_count = $_wp_sidebars_widgets;
 	$sidebar_count          = count( $sidebars_widgets_count['footer'] );
-	$sidebar_class = '';
+	$sidebar_class          = '';
 	if ( $sidebar_count <= 4 ) {
 		$sidebar_class = 'less_4';
 	} elseif ( $sidebar_count > 8 ) {
@@ -15,7 +15,44 @@ if ( is_active_sidebar( 'footer' ) ) { ?>
 	}
 	$menus = get_registered_nav_menus();
 	?>
+	<div class="frame-c6">
+		<div class="row">
+			<div class="col-12 col-md-2 d-flex align-items-center">
+				<div class="follow-us">Follow us</div>
+			</div>
+			<div class="col-12 col-md-10">
+				<div class="row justify-content-md-start justify-content-center">
+					<div class="col-xss-12  col-xs-6 col-sm-6 col-md-3 mb-2">
+						<div class="frame-c7">
+							<div class="icon-c8"></div>
+							<span class="social-media">We’re on facebook</span>
+						</div>
+					</div>
+					<div class="col-xss-12 col-xs-6 col-sm-6 col-md-3 mb-2">
+						<div class="frame-c7">
+							<div class="icon-ca"></div>
+							<span class="social-media-cb">We’re on Youtube</span>
+						</div>
+					</div>
+					<div class="col-xss-12 col-xs-6 col-sm-6 col-md-3 mb-2">
+						<div class="frame-c7">
+							<div class="logo-apps"></div>
+							<span class="social-media-cd">We’re on instagram</span>
+						</div>
+					</div>
+					<div class="col-xss-12 col-xs-6 col-sm-6 col-md-3 mb-2">
+						<div class="frame-c7">
+							<div class="logo-apps-cf">
+								<div class="vector-d0"></div>
+							</div>
+							<span class="social-media-d1">We’re on linkedin</span>
+						</div>
+					</div>
+				</div>
+			</div>
 
+		</div>
+	</div>
 	<div class="footer">
 		<div class="content-d2">
 			<div class="logo-d3">

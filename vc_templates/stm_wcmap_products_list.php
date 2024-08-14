@@ -34,7 +34,7 @@ $products = $query->get_products();
 	</div>
 	<div class="container-14 row">
 		<?php foreach ( $products as $product ): ?>
-		<div class="col-xss-12 col-xs-6 col-sm-6 col-md-4 col-lg-3">
+		<div class="col-xss-12 col-xsm-12 col-xs-6 col-sm-6 col-md-4 col-lg-3">
 			<div class="item-course-main-dark">
 				<div class="frame-15">
 					<div class="image-16">

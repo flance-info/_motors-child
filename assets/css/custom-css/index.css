@@ -181,8 +181,8 @@
 }
 .main-container .flex-row-ba {
   position: relative;
-  width: 1698px;
-  height: 660px;
+  max-width: 1698px;
+  max-height: 660px;
   margin: 147px 0 0 210px;
   z-index: 14;
 }
@@ -193,7 +193,7 @@
   flex-wrap: nowrap;
   gap: 24px;
   position: absolute;
-  width: 631px;
+  max-width: 631px;
   height: 340px;
   top: 0;
   left: 0;
@@ -217,7 +217,7 @@
   justify-content: flex-start;
   flex-shrink: 0;
   position: relative;
-  width: 652px;
+  max-width: 652px;
   height: 146px;
   color: #ffffff;
   font-family: Poppins, var(--default-font-family);
@@ -234,7 +234,7 @@
   align-self: stretch;
   flex-shrink: 0;
   position: relative;
-  width: 631px;
+  max-width: 631px;
   height: 90px;
   color: #ffffff;
   font-family: Helvetica Neue, var(--default-font-family);
@@ -433,7 +433,7 @@
   flex-wrap: nowrap;
   margin-top: 13px;
   z-index: 16;
-  adding-right: 20px;
+  padding-right: 20px;
 }
 .main-container .section-header,
 .main-container .section-header-13 {
@@ -3105,6 +3105,32 @@
   }
 }
 @media (max-width: 990px) {
+  .main-container .flex-row-ba {
+    margin: 0px;
+  }
+  .main-container .info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    gap: 24px;
+    position: absolute;
+    max-width: 631px;
+    height: 340px;
+    top: calc(10vh - 50%);
+    left: 20px;
+    z-index: 2;
+  }
+  .main-container .section-intro {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    overflow: hidden;
+    background: url(./images/mobile_banner.png) no-repeat center;
+    background-size: cover;
+    z-index: 18;
+  }
   .main-container .frame-c6 {
     padding-bottom: 10px;
     padding-top: 20px;
@@ -3173,6 +3199,20 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+  }
+}
+@media screen and (max-width: 600px) {
+  .main-container #wpadminbar {
+    position: fixed;
+  }
+  .main-container .col-xsm-12 {
+    width: 100%;
+  }
+  .main-container .heading {
+    font-family: Poppins, var(--default-font-family);
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1;
   }
 }
 @media (max-width: 480px) {
