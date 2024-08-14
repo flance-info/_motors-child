@@ -3070,7 +3070,22 @@
 .main-container .desktop-menu .link {
   padding-left: 20px;
 }
+.main-container .stm-main {
+  max-width: 1180px;
+  width: 100%;
+  margin: 0 auto;
+}
+.main-container .wpb_single_image.stm-img img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: top;
+  width: 1180px;
+}
 @media (max-width: 1024px) {
+  .main-container .stm-main {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
   .main-container .stm-header {
     top: unset;
     bottom: unset;

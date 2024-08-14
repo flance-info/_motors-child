@@ -3459,9 +3459,25 @@
 	padding-left: 20px;
   }
 
+  .stm-main {
+	max-width: 1180px;
+	width: 100%;
+	margin: 0 auto;
 
+  }
+.wpb_single_image.stm-img img {
+    height: auto;
+    max-width: 100%;
+    vertical-align: top;
+    width: 1180px;
+}
   // Responsive adjustments
   @media (max-width: 1024px) {
+	 .stm-main {
+
+	padding-left: 20px;
+	padding-right: 20px;
+  }
 	.stm-header {
 	  top: unset;
 	  bottom: unset;
