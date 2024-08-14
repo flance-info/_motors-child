@@ -20,6 +20,28 @@
 .main-container button {
   outline: 0;
 }
+.main-container .support-heading a {
+  color: #fff;
+}
+.main-container .support-heading a:hover {
+  color: #fecd34;
+}
+.main-container .support-text a {
+  color: white;
+  /* padding: 0 10px; */
+  padding-right: 5px;
+}
+.main-container .support-text a:hover {
+  color: #fecd34;
+}
+.main-container .contact-text a,
+.main-container .safety-cameras a {
+  color: #fecd34;
+}
+.main-container .contact-text a:hover,
+.main-container .safety-cameras a:hover {
+  color: #fecd34;
+}
 .main-container .section-intro {
   position: relative;
   width: 100vw;
