@@ -742,6 +742,11 @@
 	z-index: 98;
   }
 
+  .stm-button-arrow-min {
+	display: none;
+
+  }
+
   .swrgm-radio-replacement {
 	display: flex;
 	align-items: flex-start;
@@ -1117,7 +1122,7 @@
 	justify-content: flex-start;
 	position: relative;
 	max-width: 400px;
-	height: 141px;
+	min-height: 100px;
 	margin: 0 0 0 0;
 	color: #ffffff;
 	font-family: Poppins SemiBold, var(--default-font-family);
@@ -3480,7 +3485,15 @@
 	}
   }
   @media (max-width: 768px) {
-
+	.stm-min {
+	  display: flex;
+	  flex-direction: row;
+	  justify-content: center;
+	}
+	.stm-button-arrow-min {
+	  display: block;
+	  width: 50px;
+	}
 	.info-6f {
 	  width: 100%;
 	}
@@ -3496,9 +3509,7 @@
 	  display: none;
 	}
 	.video {
-
 	  width: 100%;
-
 	}
 	.video-heading {
 	  max-width: 100%;
