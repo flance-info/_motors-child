@@ -19,7 +19,7 @@ $menu_items = wp_get_nav_menu_items( $menu_id ); // Retrieve the menu items
 		<?php endforeach; ?>
 	</div>
 <?php endif; ?>
-<div class="section-intro">
+<div class="section-intro single-page-banner">
 	<div class="stm-header">
 		<div class="stm-container">
 			<div class="stm-logo">
@@ -57,35 +57,16 @@ $menu_items = wp_get_nav_menu_items( $menu_id ); // Retrieve the menu items
 		</div>
 	</div>
 	<div class="flex-row-ba">
-		<div class="info">
-			<div class="stm-content">
-				<span class="heading">Interfacing Solutions For Any Vehicle</span><span class="text"
-				>CRUX Interfacing Solutions Specializing in automotive OEM
-                integration for the digital era, CRUX Interfacing Solutions
-                provides an array of products based on proprietary
-                research.</span
-				>
-			</div>
-			<div class="actions">
-				<div class="button-6">
-					<span class="text-sm-7">Learn more</span>
-				</div>
-				<div class="button-8">
-					<span class="text-sm-9">Cruxinterfacing.com</span>
-					<div class="icon-btn-right">
-						<div class="elements">
-							<div class="vector"></div>
-						</div>
-					</div>
-				</div>
-			</div>
+		<div class="stm-content">
+			<h1>
+				<?php echo get_the_title(); ?>
+			</h1>
 		</div>
 	</div>
 
 </div>
 
 <style>
-
 
 
 </style>

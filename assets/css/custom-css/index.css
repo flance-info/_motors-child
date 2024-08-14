@@ -3070,10 +3070,49 @@
 .main-container .desktop-menu .link {
   padding-left: 20px;
 }
+.main-container .single-page-banner .stm-content {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-container .single-page-banner .flex-row-ba {
+  margin: 0 auto;
+  animation-fill-mode: backwards;
+  display: flex;
+  align-items: center;
+  height: 150px;
+}
+.main-container .single-page-banner .flex-row-ba h1 {
+  color: #ffffff;
+}
 .main-container .stm-main {
   max-width: 1180px;
   width: 100%;
   margin: 0 auto;
+}
+.main-container .section-intro.single-page-banner {
+  background: #0a030a;
+  max-height: 280px;
+}
+.main-container .stm-main h4 {
+  line-height: 1.4;
+  text-align: left;
+  font-size: 16px;
+  /* color: #5d677d; */
+  font-family: Helvetica Neue, var(--default-font-family);
+  font-size: 16px;
+  font-weight: 700;
+  /* line-height: 30px; */
+}
+.main-container .stm-main {
+  color: #5d677d;
+  font-family: Helvetica Neue, var(--default-font-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
 }
 .main-container .wpb_single_image.stm-img img {
   height: auto;
