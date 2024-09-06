@@ -8,7 +8,8 @@ $atts = array(
 		'orderby'      => isset( $orderby ) ? $orderby : 'date',  // Default to 'date' if not set
 		'order'        => isset( $order ) ? $order : 'DESC',      // Default to 'DESC' if not set
 		'cat_operator' => 'IN',
-		'best_selling' => isset( $best_selling ) && $best_selling === 'best_selling'
+		'best_selling' => isset( $best_selling ) && $best_selling === 'best_selling',
+		'product_ids'  => ! empty( $products_ids ) ? explode( ', ', $products_ids ) : array(), // Convert string to array
 );
 $args = array(
 		'limit'   => $atts['limit'],
@@ -18,6 +19,9 @@ $args = array(
 );
 if ( ! empty( $atts['category'] ) ) {
 	$args['category'] = array( $atts['category'] );
+}
+if ( ! empty( $atts['product_ids'] ) ) {
+	$args['post__in'] = $atts['product_ids']; // Filter by specific product IDs
 }
 if ( $atts['best_selling'] ) {
 	$args['meta_key'] = 'total_sales';
