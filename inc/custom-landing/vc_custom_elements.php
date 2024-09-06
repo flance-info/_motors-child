@@ -3,6 +3,48 @@
 if ( function_exists( 'vc_map' ) ) {
 	add_action( 'init', 'register_child_custom_elements' );
 }
+
+function get_woocommerce_product_autocomplete_suggester($query) {
+    global $wpdb;
+    $query = esc_sql($query);
+
+    // Query WooCommerce products
+    $product_results = $wpdb->get_results($wpdb->prepare(
+        "SELECT p.ID AS id, p.post_title AS title FROM {$wpdb->posts} AS p
+        JOIN {$wpdb->postmeta} AS pm ON p.ID = pm.post_id
+        WHERE p.post_type = 'product' AND p.post_status = 'publish'
+        AND (p.ID = %d OR p.post_title LIKE '%%%s%%')",
+        $query, $query
+    ), ARRAY_A);
+
+    $results = array();
+    foreach ($product_results as $value) {
+        $results[] = array(
+            'value' => $value['id'],
+            'label' => $value['title']
+        );
+    }
+    return $results;
+}
+add_filter('vc_autocomplete_stm_wcmap_custom_products_list_products_ids_callback', 'get_woocommerce_product_autocomplete_suggester', 10, 1);
+
+function render_woocommerce_product_autocomplete_suggester($query) {
+    $query = trim($query['value']);
+    if (!empty($query)) {
+        $product = get_post((int) $query);
+        if (is_object($product)) {
+            return array(
+                'value' => $product->ID,
+                'label' => $product->post_title
+            );
+        }
+    }
+    return false;
+}
+
+add_filter('vc_autocomplete_stm_wcmap_custom_products_list_products_ids_render', 'render_woocommerce_product_autocomplete_suggester', 10, 1);
+
+
 function register_child_custom_elements() {
 
 	$order_by_values  = array(
@@ -27,6 +69,7 @@ function register_child_custom_elements() {
 		'',
 		esc_html__( 'New', 'stm-woocommerce-motors-auto-parts' ) => 'best_selling',
 	);
+
 	vc_map( array(
 		'html_template' => get_stylesheet_directory() . '/vc_templates/stm_wcmap_products_list.php',
 		'name'          => __( 'STM WC Custom Products', 'stm-woocommerce-motors-auto-parts' ),
@@ -53,6 +96,21 @@ function register_child_custom_elements() {
 				'param_name'  => 'number_posts',
 				'save_always' => true,
 			),
+			     array(
+                'type'        => 'autocomplete',
+                'heading'     => __('Select Products', 'your-text-domain'),
+                'param_name'  => 'products_ids',
+                'settings'    => array(
+                    'multiple'    => true,
+                    'sortable'    => true,
+                    'unique_values' => true,
+                    'min_length'  => 2,
+                    'groups'      => true,
+                    'sortable'    => true,
+                    'placeholder' => __('Search for products', 'your-text-domain'),
+                ),
+                'description' => __('Search and select multiple products by title or SKU.', 'your-text-domain'),
+            ),
 			array(
 				'type'        => 'dropdown',
 				'heading'     => __( 'Order by', 'stm-woocommerce-motors-auto-parts' ),
