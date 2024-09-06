@@ -8,7 +8,6 @@ $atts = array(
 		'orderby'      => isset( $orderby ) ? $orderby : 'date',  // Default to 'date' if not set
 		'order'        => isset( $order ) ? $order : 'DESC',      // Default to 'DESC' if not set
 		'cat_operator' => 'IN',
-		'best_selling' => isset( $best_selling ) && $best_selling === 'best_selling',
 		'product_ids'  => ! empty( $products_ids ) ? explode( ', ', $products_ids ) : array(), // Convert string to array
 );
 $args = array(
@@ -17,18 +16,14 @@ $args = array(
 		'order'   => $atts['order'],
 		'return'  => 'objects',             // Return full product objects (can be 'ids' if you only need the IDs)
 );
-if ( ! empty( $atts['category'] ) ) {
-	$args['category'] = array( $atts['category'] );
-}
+
 if ( ! empty( $atts['product_ids'] ) ) {
-	$args['post__in'] = $atts['product_ids']; // Filter by specific product IDs
-}
-if ( $atts['best_selling'] ) {
-	$args['meta_key'] = 'total_sales';
-	$args['orderby']  = 'meta_value_num';
+	$args['include'] = $atts['product_ids']; // Filter by specific product IDs
 }
 
 $query    = new WC_Product_Query( $args );
+
+
 $products = $query->get_products();
 ?>
 
