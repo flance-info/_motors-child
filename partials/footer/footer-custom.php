@@ -23,30 +23,32 @@ if ( is_active_sidebar( 'footer' ) ) { ?>
 			<div class="col-12 col-md-10">
 				<div class="row justify-content-md-start justify-content-center">
 					<div class="col-xss-12  col-xs-6 col-sm-6 col-md-3 mb-2">
-						<div class="frame-c7">
+						<a href="https://www.facebook.com/CRUXINTERFACING" class="frame-c7">
+
 							<div class="icon-c8"></div>
 							<span class="social-media">We’re on facebook</span>
-						</div>
+
+						</a>
 					</div>
 					<div class="col-xss-12 col-xs-6 col-sm-6 col-md-3 mb-2">
-						<div class="frame-c7">
+						<a href="https://www.youtube.com/@cruxinterfaces" class="frame-c7">
 							<div class="icon-ca"></div>
 							<span class="social-media-cb">We’re on Youtube</span>
-						</div>
+					</a>
 					</div>
 					<div class="col-xss-12 col-xs-6 col-sm-6 col-md-3 mb-2">
-						<div class="frame-c7">
+							<a href="https://www.instagram.com/cruxinterfacingsolutions/?hl=en" class="frame-c7">
 							<div class="logo-apps"></div>
 							<span class="social-media-cd">We’re on instagram</span>
-						</div>
+						</a>
 					</div>
 					<div class="col-xss-12 col-xs-6 col-sm-6 col-md-3 mb-2">
-						<div class="frame-c7">
+							<a href="https://www.linkedin.com" class="frame-c7">
 							<div class="logo-apps-cf">
 								<div class="vector-d0"></div>
 							</div>
 							<span class="social-media-d1">We’re on linkedin</span>
-						</div>
+						</a>
 					</div>
 				</div>
 			</div>
